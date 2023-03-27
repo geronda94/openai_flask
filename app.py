@@ -2,6 +2,7 @@ from flask import Flask, redirect, render_template, request, url_for, session
 from api_requests import gpt3, turbo_gpt
 
 
+
 app = Flask(__name__)
 app.secret_key = 'mysecretkey'
 
@@ -15,7 +16,7 @@ def index():
         if request.form["submit"] == "GPT 3":
             response = gpt3(req)
             
-        elif request.form["submit"] == "GPT 3.5 Turbo":
+        else:
             response = turbo_gpt(req)
 
         return redirect(url_for("index", result=response, req=f' по запросу :{req}'))
