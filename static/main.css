@@ -13,6 +13,8 @@
   font-weight: bold;
   font-style: normal;
 }
+
+
 body,
 input {
   font-size: 16px;
@@ -20,6 +22,7 @@ input {
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
+
 body {
   display: flex;
   flex-direction: column;
