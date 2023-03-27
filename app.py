@@ -14,6 +14,7 @@ def index():
         
         if request.form["submit"] == "GPT 3":
             response = gpt3(req)
+            
         elif request.form["submit"] == "GPT 3.5 Turbo":
             response = turbo_gpt(req)
 
