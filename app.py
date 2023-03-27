@@ -34,7 +34,7 @@ def index():
         return redirect(url_for("index", result=ret_responce, req=f' по запросу :{req}'))
 
     result = request.args.get("result")
-    req = f"на: {session.get('query')}"
+    req = f"на запрос: {session.get('query')}"
     return render_template("index.html", result=result, req=req)
 
 
