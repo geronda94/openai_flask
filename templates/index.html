@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>GPT 3.5 Turbo</title>
+  <link rel="icon" href="{{ url_for('static', filename='dog.png') }}">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
   <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Введите запрос к CHAT-GPT</h3>
+  <h3>Введите запрос к GPT 3.5 Turbo</h3>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Введите сообщение" required />
+    <input type="textarea" class="textarea" name="animal" placeholder="Введите сообщение" required />
     <input type="submit" value="Отправить запрос" />
   </form>
   {% if result %}

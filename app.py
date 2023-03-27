@@ -10,15 +10,23 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 def index():
     if request.method == "POST":
         req = request.form["animal"]
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=req,
-            max_tokens=4000,
-            temperature=0.1,
-            n=1,
-            stop=None
-        )
-        return redirect(url_for("index", result=response.choices[0].text))
+        # response = openai.Completion.create(
+        #     model="gpt-3.5-turbo-0301"
+        #     prompt=req,
+        #     max_tokens=4000,
+        #     temperature=0.1,
+        #     n=1,
+        #     stop=None
+        # )
+        #return redirect(url_for("index", result=response.choices[0].text))
+        completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo", 
+        messages=[{"role": "user", "content": f"{req}"}])
+
+        ret_responce = completion.choices[0].message.content
+
+
+        return redirect(url_for("index", result=ret_responce))
 
     result = request.args.get("result")
     return render_template("index.html", result=result)
