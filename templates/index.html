@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>GPT 3.5 Turbo</title>
+  <title>GPT Custom</title>
   <link rel="icon" href="{{ url_for('static', filename='dog.png') }}">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
@@ -17,7 +17,10 @@
   <h3>Введите сообщение</h3>
   <form action="/" method="post">
     <input type="textarea" class="textarea" name="animal" placeholder="Введите сообщение" required />
-    <input type="submit" value="Отправить запрос" />
+    <div class="buttons">
+      <input type="submit" value="GPT 3"  name="submit"/>
+      <input type="submit" value="GPT 3.5 Turbo" name="submit" />
+    </div>
   </form>
   
 </body>

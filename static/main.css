@@ -47,22 +47,38 @@ input[type="textarea"] {
   border: 1px solid #10a37f;
   border-radius: 4px;
   margin-bottom: 24px;
-  width: 600px;
+  width: 570px;
 }
 ::placeholder {
   color: #8e8ea0;
   opacity: 1;
 }
+
+.buttons {
+
+}
 input[type="submit"] {
+  display: inline;
   padding: 12px 20px;
   color: #fff;
   background-color: #10a37f;
-  border: none;
+  border:  #10a37f 1px solid;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
   margin: 0 auto;
+  min-width: 150px;
 }
+
+input[type="submit"]:hover{
+  color: #10a37f;
+  background-color:#fff;
+  border:  #10a37f 1px solid;
+  border-radius: 4px;
+}
+
+
+
 .result {
   position: relative;
   font-weight: bold;
