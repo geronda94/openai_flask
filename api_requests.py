@@ -12,6 +12,8 @@ def turbo_gpt(req):
     return str(responce)
 
 
+
+
 def gpt3(req):
     response = openai.Completion.create(
             model="text-davinci-003",
