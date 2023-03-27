@@ -7,13 +7,17 @@
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Введите запрос к GPT 3.5 Turbo</h3>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />  
+  {% if result %}
+  <div class="result">
+    <h4 class="responce_h4">Ответ {{ req }}</h3>
+    <p class="result_p">{{ result }}</p>
+  </div>
+  {% endif %}
+  <h3>Введите сообщение</h3>
   <form action="/" method="post">
     <input type="textarea" class="textarea" name="animal" placeholder="Введите сообщение" required />
     <input type="submit" value="Отправить запрос" />
   </form>
-  {% if result %}
-  <div class="result">{{ result }}</div>
-  {% endif %}
+  
 </body>

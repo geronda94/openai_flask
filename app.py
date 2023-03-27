@@ -1,17 +1,19 @@
 import os
 import openai
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, session
 from config import OPENAI_API_KEY
 
 
 app = Flask(__name__)
 openai.api_key = OPENAI_API_KEY
-
+app.secret_key = 'mysecretkey'
 
 @app.route("/", methods=("GET", "POST"))
-def index():
+def index():    
     if request.method == "POST":
         req = request.form["animal"]
+        session['query'] = req
+
         # response = openai.Completion.create(
         #     model="gpt-3.5-turbo-0301"
         #     prompt=req,
@@ -21,6 +23,7 @@ def index():
         #     stop=None
         # )
         #return redirect(url_for("index", result=response.choices[0].text))
+        
         completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", 
         messages=[{"role": "user", "content": f"{req}"}])
@@ -28,13 +31,14 @@ def index():
         ret_responce = completion.choices[0].message.content
 
 
-        return redirect(url_for("index", result=ret_responce))
+        return redirect(url_for("index", result=ret_responce, req=f' по запросу :{req}'))
 
     result = request.args.get("result")
-    return render_template("index.html", result=result)
+    req = f"на: {session.get('query')}"
+    return render_template("index.html", result=result, req=req)
 
 
-def generate_prompt(animal):
+def generate_prompt(animal,req ):
     return str(animal.capitalize())
     
 

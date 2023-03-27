@@ -30,17 +30,16 @@ body {
   width: 34px;
 }
 h3 {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-  color: #202123;
-  margin: 16px 0 40px;
+  font-size: 24px;
+  line-height: 20px;
+  color: #10a37f;
+  margin: 50px auto 15px auto;
 }
 form {
   display: flex;
   flex-direction: column;
   margin:0 auto;
-  max-width: 600px;
+  width: 600px;
 
 }
 input[type="textarea"] {
@@ -48,27 +47,41 @@ input[type="textarea"] {
   border: 1px solid #10a37f;
   border-radius: 4px;
   margin-bottom: 24px;
-  width: 550px;
+  width: 600px;
 }
 ::placeholder {
   color: #8e8ea0;
   opacity: 1;
 }
 input[type="submit"] {
-  padding: 12px 0;
+  padding: 12px 20px;
   color: #fff;
   background-color: #10a37f;
   border: none;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+  margin: 0 auto;
 }
 .result {
   position: relative;
   font-weight: bold;
-  margin:40px auto;
-  border: 2px #10a37f solid;
+  width: 600px;
+}
+
+.result_p {
   border-radius: 4px;
   padding: 15px;
+  margin:20px auto;
+  border: 2px #10a37f solid;
   max-width: 600px;
+}
+
+.responce_h4 {
+  position: relative;
+  text-align: center;
+  color: #10a37f;
+  padding: 5px;
+  margin: 5px auto;
+
 }
