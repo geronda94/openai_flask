@@ -8,8 +8,8 @@ def turbo_gpt(req):
     model="gpt-3.5-turbo", 
     messages=[{"role": "user", "content": f"{req}"}])
 
-    responce = completion.choices[0].message.content
-    return str(responce)
+    response = completion.choices[0].message.content
+    return str(response)
 
 
 
